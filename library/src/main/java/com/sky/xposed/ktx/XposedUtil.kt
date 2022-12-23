@@ -27,22 +27,22 @@ fun findConstructor(className: String, vararg parameterTypes: Any): MethodHook {
 }
 
 fun findMethodBeforeHook(className: String, methodName: String, vararg parameterTypes: Any,
-                         before: (param: XC_MethodHook.MethodHookParam) -> Unit): XC_MethodHook.Unhook {
+                         before: (param: XC_MethodHook.MethodHookParam) -> Unit): MethodHook.Unhook {
     return findMethod(className, methodName, *parameterTypes).before { before.invoke(it) }
 }
 
 fun findMethodBeforeHook(clazz: Class<*>, methodName: String, vararg parameterTypes: Any,
-                         before: (param: XC_MethodHook.MethodHookParam) -> Unit): XC_MethodHook.Unhook {
+                         before: (param: XC_MethodHook.MethodHookParam) -> Unit): MethodHook.Unhook {
     return findMethod(clazz, methodName, *parameterTypes).before { before.invoke(it) }
 }
 
 fun findMethodAfterHook(className: String, methodName: String, vararg parameterTypes: Any,
-                        after: (param: XC_MethodHook.MethodHookParam) -> Unit): XC_MethodHook.Unhook {
+                        after: (param: XC_MethodHook.MethodHookParam) -> Unit): MethodHook.Unhook {
     return findMethod(className, methodName, *parameterTypes).after { after.invoke(it) }
 }
 
 fun findMethodAfterHook(clazz: Class<*>, methodName: String, vararg parameterTypes: Any,
-                        after: (param: XC_MethodHook.MethodHookParam) -> Unit): XC_MethodHook.Unhook {
+                        after: (param: XC_MethodHook.MethodHookParam) -> Unit): MethodHook.Unhook {
     return findMethod(clazz, methodName, *parameterTypes).after { after.invoke(it) }
 }
 
