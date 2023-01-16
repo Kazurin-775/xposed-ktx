@@ -1,7 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.7.10'
+    ext.kotlin_version = '1.7.21'
     repositories {
         google()
         mavenCentral()
@@ -18,8 +18,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        // JCenter is only required by de.robv.android.xposed:api:82
-        maven { url 'https://jcenter.bintray.com' }
+        maven { url 'https://api.xposed.info' }
         maven { url 'https://jitpack.io' }
     }
 }

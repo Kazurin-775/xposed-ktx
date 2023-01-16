@@ -22,7 +22,6 @@ android {
 }
 
 dependencies {
-    compileOnly 'com.rover12421.AndroidHideApi:android:1.17'
     compileOnly 'de.robv.android.xposed:api:82'
-    implementation 'com.github.sky-wei:xposed-javax:1.2.0'
+    api 'com.github.sky-wei:xposed-javax:1.2.0'
 }
